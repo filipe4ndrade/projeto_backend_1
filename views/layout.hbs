@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>{{title}}</title>
+    <!-- Bootstrap CSS (Offline) -->
+    <link rel='stylesheet' href='/stylesheets/bootstrap/bootstrap.min.css' />
+    <meta name ="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <h1 class="mb-4 mt-3">{{title}}</h1>
+
+      <!-- Navigation -->
+      <nav class="nav nav-pills nav-fill justify-content-center mb-4">
+        <a class="nav-item nav-link {{#if activeHome}}active{{/if}}" href="/">Sistema de Receitas</a>
+        <a class="nav-item nav-link {{#if activeSobre}}active{{/if}}" href="/sobre">Sobre</a>
+        <a class="nav-item nav-link {{#if activeCria}}active{{/if}}" href="/receita/cria">Nova Receita</a>
+        <a class="nav-item nav-link {{#if activePesquisa}}active{{/if}}" href="/receita/pesquisa">Pesquisar Receita</a>
+      </nav>
+
+      {{{body}}}
+    </div>
+
+    <!-- Bootstrap JS (Offline) -->
+    <script src="/javascripts/bootstrap/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

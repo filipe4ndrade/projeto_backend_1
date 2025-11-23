@@ -1,0 +1,31 @@
+<form action="/receita/altera/{{receita.id}}" method="POST">
+  <div class="form-group mb-3">
+    <label for="id">Identificação da Receita</label>
+    <input type="number" class="form-control" id="id" name="id" value="{{receita.id}}" readonly>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="titulo">Título da Receita</label>
+    <input type="text" class="form-control" id="titulo" name="titulo" value="{{receita.titulo}}" required>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="tempoPreparo">Tempo de Preparo (minutos)</label>
+    <input type="number" class="form-control" id="tempoPreparo" name="tempoPreparo" value="{{receita.tempoPreparo}}" min="1" required>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="ingredientes">Ingredientes</label>
+    <textarea class="form-control" id="ingredientes" name="ingredientes" rows="5" required>{{receita.ingredientes}}</textarea>
+    <small class="form-text text-muted">Digite cada ingrediente em uma nova linha.</small>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="modoPreparo">Modo de Preparo</label>
+    <textarea class="form-control" id="modoPreparo" name="modoPreparo" rows="5" required>{{receita.modoPreparo}}</textarea>
+    <small class="form-text text-muted">Descreva passo a passo o modo de preparo.</small>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Alterar Receita</button>
+  <a href="/" class="btn btn-secondary">Voltar</a>
+</form>

@@ -1,0 +1,23 @@
+<form action="/receita/pesquisa" method="POST" class="mb-4">
+  <div class="input-group">
+    <input type="text" class="form-control" name="termo" placeholder="Pesquisa por título da receita" required>
+    <button class="btn btn-primary" type="submit">Pesquisar</button>
+  </div>
+</form>
+
+{{#if resultados.length}}
+  <h3 class="mb-3">Lista de Receitas</h3>
+  <div class="list-group">
+    {{#each resultados}}
+      <a href="/receita/consulta/{{this.id}}" class="list-group-item list-group-item-action text-info" style="text-decoration: underline;">
+        {{this.titulo}}
+      </a>
+    {{/each}}
+  </div>
+{{else}}
+  <p>Nenhuma receita a ser exibida no momento.</p>
+{{/if}}
+
+<div class="mt-4">
+    <a href="/" class="btn btn-secondary">&larr; Voltar</a>
+</div>

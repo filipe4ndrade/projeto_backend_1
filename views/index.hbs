@@ -1,0 +1,23 @@
+{{#if receitas.length}}
+  {{#each receitas}}
+    <div class="row">
+      <div class="col-md-5 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{this.titulo}}</h5>
+            <p class="card-text">Tempo de Preparo: {{this.tempoPreparo}} minutos</p>
+          </div>
+          <div class="card-footer bg-light">
+            <a href="/receita/consulta/{{this.id}}" class="btn btn-info text-white">Ver Detalhes</a>
+            <a href="/receita/altera/{{this.id}}" class="btn btn-warning">Alterar</a>
+            <a href="/receita/exclui/{{this.id}}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <div class="alert alert-info text-center" role="alert">
+    Nenhuma receita cadastrada.
+  </div>
+{{/if}}
