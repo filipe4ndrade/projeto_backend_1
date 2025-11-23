@@ -19,3 +19,5 @@ router.post('/altera/:id', controllerReceita.altera_post);
 
 // Delete
 router.get('/exclui/:id', controllerReceita.exclui); 
+
+module.exports = router;
